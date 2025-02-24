@@ -14,7 +14,41 @@
         <div id="routerTarget"></div>
 
         <dialog name="results">
-            <!-- TODO: ... -->
+            <div class="ui-flex-grid content">
+                <div class="ui-flex-grid-row" style="--justify: flex-end; --align: center">
+                    <div class="ui-flex-grid-item">
+                        <h4>Verbrauch</h4>
+                    </div>
+
+                    <button class="close" variant="ghost" icon>
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+
+                <div class="ui-flex-grid">
+                    <h5>Hauptmasse</h5>
+                </div>
+
+                <div class="ui-flex-grid-row" style="--justify: space-between">
+                    <span class="main-kg"></span>
+                    <span class="main-percent"></span>
+                </div>
+
+                <div class="ui-flex-grid">
+                    <h5>Zusatzmasse</h5>
+                </div>
+            </div>
+
+            <template name="slot-item">
+                <div class="ui-flex-grid-row slot-item">
+                    <h5 class="name" style="width: 8ch; text-wrap: nowrap"></h5>
+
+                    <div class="ui-flex-grid-row" style="--justify: space-between">
+                        <span class="kg"></span>
+                        <span class="percent"></span>
+                    </div>
+                </div>
+            </template>
         </dialog>
 
         <template name="root">

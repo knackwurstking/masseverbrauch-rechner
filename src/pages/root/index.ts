@@ -34,6 +34,20 @@ export async function onMount() {
     };
 
     form.onsubmit = async () => {
+        if (!mainFlow.value) {
+            mainFlow.ariaInvalid = "";
+            return;
+        } else {
+            mainFlow.ariaInvalid = null;
+        }
+
+        if (!mainRuntime.value) {
+            mainRuntime.ariaInvalid = "";
+            return;
+        } else {
+            mainRuntime.ariaInvalid = null;
+        }
+
         await dialogs.results.open(
             calc.consumption({
                 flow: parseFloat(mainFlow.value || defaultFlow),

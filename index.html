@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-theme="auto">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
 
         <title>Masseverbrauch Rechner</title>
     </head>
-    <body>
+    <body class="ui-container">
         <div id="routerTarget"></div>
 
         <dialog name="results">
@@ -19,12 +19,12 @@
 
         <template name="root">
             <form action="javascript:void(0);">
-                <div class="ui-flex-grid-row">
+                <div class="ui-flex-grid-row" style="--justify: space-between">
                     <label for="main-flow">Flow</label>
                     <input id="main-flow" style="width: 12ch" type="number" min="0" step="0.1" />
                 </div>
 
-                <div class="ui-flex-grid-row">
+                <div class="ui-flex-grid-row" style="--justify: space-between">
                     <label for="main-runtime">Laufzeit der Hauptmasse (Minuten)</label>
                     <input
                         id="main-runtime"
@@ -36,24 +36,129 @@
                 </div>
 
                 <div class="ui-flex-grid">
+                    <!-- NOTE: A / B - Slot 1 -->
+
                     <div class="ui-flex-grid-item">
                         <h4>A / B</h4>
                     </div>
 
-                    <div class="ui-flex-grid-row ui-flex-grid-item">
-                        <div class="ui-flex-grid ui-flex-grid-item">
+                    <div class="ui-flex-grid-row ui-flex-grid-item" style="--justify: space-evenly">
+                        <div
+                            class="ui-flex-grid ui-flex-grid-item"
+                            style="--gap: 0; --justify: center; --align: center"
+                        >
                             <label for="tower-slot-1-before">KG vor der Messung</label>
                             <input id="tower-slot-1-before" type="number" min="0" />
                         </div>
 
-                        <div class="ui-flex-grid ui-flex-grid-item">
+                        <div
+                            class="ui-flex-grid ui-flex-grid-item"
+                            style="--gap: 0; --justify: center; --align: center"
+                        >
                             <label for="tower-slot-1-after">KG nach der Messung</label>
                             <input id="tower-slot-1-after" type="number" min="0" />
+                        </div>
+                    </div>
+
+                    <!-- NOTE: C / D - Slot 2 -->
+
+                    <div class="ui-flex-grid-item">
+                        <h4>C / D</h4>
+                    </div>
+
+                    <div class="ui-flex-grid-row ui-flex-grid-item" style="--justify: space-evenly">
+                        <div
+                            class="ui-flex-grid ui-flex-grid-item"
+                            style="--gap: 0; --justify: center; --align: center"
+                        >
+                            <label for="tower-slot-2-before">KG vor der Messung</label>
+                            <input id="tower-slot-2-before" type="number" min="0" />
+                        </div>
+
+                        <div
+                            class="ui-flex-grid ui-flex-grid-item"
+                            style="--gap: 0; --justify: center; --align: center"
+                        >
+                            <label for="tower-slot-2-after">KG nach der Messung</label>
+                            <input id="tower-slot-2-after" type="number" min="0" />
+                        </div>
+                    </div>
+
+                    <!-- NOTE: E / F - Slot 3 -->
+
+                    <div class="ui-flex-grid-item">
+                        <h4>E / F</h4>
+                    </div>
+
+                    <div class="ui-flex-grid-row ui-flex-grid-item" style="--justify: space-evenly">
+                        <div
+                            class="ui-flex-grid ui-flex-grid-item"
+                            style="--gap: 0; --justify: center; --align: center"
+                        >
+                            <label for="tower-slot-3-before">KG vor der Messung</label>
+                            <input id="tower-slot-3-before" type="number" min="0" />
+                        </div>
+
+                        <div
+                            class="ui-flex-grid ui-flex-grid-item"
+                            style="--gap: 0; --justify: center; --align: center"
+                        >
+                            <label for="tower-slot-3-after">KG nach der Messung</label>
+                            <input id="tower-slot-3-after" type="number" min="0" />
+                        </div>
+                    </div>
+
+                    <!-- NOTE: G / H - Slot 4 -->
+
+                    <div class="ui-flex-grid-item">
+                        <h4>G / H</h4>
+                    </div>
+
+                    <div class="ui-flex-grid-row ui-flex-grid-item" style="--justify: space-evenly">
+                        <div
+                            class="ui-flex-grid ui-flex-grid-item"
+                            style="--gap: 0; --justify: center; --align: center"
+                        >
+                            <label for="tower-slot-4-before">KG vor der Messung</label>
+                            <input id="tower-slot-4-before" type="number" min="0" />
+                        </div>
+
+                        <div
+                            class="ui-flex-grid ui-flex-grid-item"
+                            style="--gap: 0; --justify: center; --align: center"
+                        >
+                            <label for="tower-slot-4-after">KG nach der Messung</label>
+                            <input id="tower-slot-4-after" type="number" min="0" />
+                        </div>
+                    </div>
+
+                    <!-- NOTE: I / J - Slot 5 -->
+
+                    <div class="ui-flex-grid-item">
+                        <h4>I / J</h4>
+                    </div>
+
+                    <div class="ui-flex-grid-row ui-flex-grid-item" style="--justify: space-evenly">
+                        <div
+                            class="ui-flex-grid ui-flex-grid-item"
+                            style="--gap: 0; --justify: center; --align: center"
+                        >
+                            <label for="tower-slot-5-before">KG vor der Messung</label>
+                            <input id="tower-slot-5-before" type="number" min="0" />
+                        </div>
+
+                        <div
+                            class="ui-flex-grid ui-flex-grid-item"
+                            style="--gap: 0; --justify: center; --align: center"
+                        >
+                            <label for="tower-slot-5-after">KG nach der Messung</label>
+                            <input id="tower-slot-5-after" type="number" min="0" />
                         </div>
                     </div>
                 </div>
 
                 <div class="ui-flex-grid-row" style="--justify: flex-end">
+                    <input type="reset" noformsubmit />
                     <input type="submit" />
                 </div>
             </form>

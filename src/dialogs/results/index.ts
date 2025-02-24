@@ -1,6 +1,6 @@
-import * as utils from "../utils";
+import * as calc from "../../utils/calc";
 
-export async function open(data: utils.calc.Results): Promise<void> {
+export async function open(data: calc.Results): Promise<void> {
     return new Promise((resolve) => {
         const dialog = document.querySelector<HTMLDialogElement>(`dialog[name="results"]`)!;
 

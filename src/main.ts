@@ -1,7 +1,9 @@
-import * as ui from "ui";
 import { registerSW } from "virtual:pwa-register";
 
+import * as ui from "ui";
+
 import * as pages from "./pages";
+import * as constants from "./constants";
 
 // PWA Updates
 
@@ -12,6 +14,12 @@ const updateSW = registerSW({
         }
     },
 });
+
+// Pre
+
+const versionContainer = document.querySelector<HTMLElement>(`.version-container`)!;
+versionContainer.querySelector<HTMLElement>(`.version`)!.innerText = `${constants.version} `;
+versionContainer.querySelector<HTMLElement>(`.build`)!.innerText = `[Build: ${constants.build}]`;
 
 // Router
 

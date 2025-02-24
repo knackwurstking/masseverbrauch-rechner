@@ -1,6 +1,7 @@
-import * as ui from "ui";
+import * as dialogs from "../../dialogs";
+import * as utils from "../../utils";
 
-let cleanup: ui.CleanUpFunction[] = [];
+const defaultFlow = "1.5";
 
 export async function onMount() {
     const t = document.querySelector<HTMLElement>(`#routerTarget`)!;
@@ -15,11 +16,11 @@ export async function onMount() {
     for (const slot of ["1", "2", "3", "4", "5"]) {
         slots.push({
             before: t.querySelector(`input#tower-slot-${slot}-before`)!,
-            after: t.querySelector(`input#tower-slot-${slot}-before`)!,
+            after: t.querySelector(`input#tower-slot-${slot}-after`)!,
         });
     }
 
-    mainFlow.value = "1.5";
+    mainFlow.value = defaultFlow;
     mainRuntime.value = "";
 
     slots.forEach((slot) => {
@@ -32,17 +33,23 @@ export async function onMount() {
         reload();
     };
 
-    form.onsubmit = () => {
-        // TODO: Calculate results and open results dialog
+    form.onsubmit = async () => {
+        await dialogs.results.open(
+            utils.calc.consumption({
+                flow: parseFloat(mainFlow.value || defaultFlow),
+                runtime: parseFloat(mainRuntime.value || "0"),
+                slots: slots.map((slot) => {
+                    return {
+                        before: parseFloat(slot.before.value || "0"),
+                        after: parseFloat(slot.after.value || "0"),
+                    };
+                }),
+            }),
+        );
     };
-
-    // TODO: ...
 }
 
-export async function onDestroy() {
-    cleanup.forEach((fn) => fn());
-    cleanup = [];
-}
+export async function onDestroy() {}
 
 async function reload() {
     await onDestroy();

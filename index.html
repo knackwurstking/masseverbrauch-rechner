@@ -18,6 +18,13 @@
         </dialog>
 
         <template name="root">
+            <style>
+                #routerTarget input[type="number"] {
+                    width: 12ch;
+                    text-align: center;
+                }
+            </style>
+
             <form action="javascript:void(0);">
                 <!-- NOTE: Main Flow & Runtime -->
 
@@ -40,9 +47,7 @@
                 <div class="ui-flex-grid">
                     <!-- NOTE: A / B - Slot 1 -->
 
-                    <div class="ui-flex-grid-item">
-                        <h4>A / B</h4>
-                    </div>
+                    <h4 class="ui-flex-grid-item" style="text-align: center; width: 100%">A / B</h4>
 
                     <div class="ui-flex-grid-row ui-flex-grid-item" style="--justify: space-evenly">
                         <div
@@ -64,9 +69,7 @@
 
                     <!-- NOTE: C / D - Slot 2 -->
 
-                    <div class="ui-flex-grid-item">
-                        <h4>C / D</h4>
-                    </div>
+                    <h4 class="ui-flex-grid-item" style="text-align: center; width: 100%">C / D</h4>
 
                     <div class="ui-flex-grid-row ui-flex-grid-item" style="--justify: space-evenly">
                         <div
@@ -88,9 +91,7 @@
 
                     <!-- NOTE: E / F - Slot 3 -->
 
-                    <div class="ui-flex-grid-item">
-                        <h4>E / F</h4>
-                    </div>
+                    <h4 class="ui-flex-grid-item" style="text-align: center; width: 100%">E / F</h4>
 
                     <div class="ui-flex-grid-row ui-flex-grid-item" style="--justify: space-evenly">
                         <div
@@ -112,9 +113,7 @@
 
                     <!-- NOTE: G / H - Slot 4 -->
 
-                    <div class="ui-flex-grid-item">
-                        <h4>G / H</h4>
-                    </div>
+                    <h4 class="ui-flex-grid-item" style="text-align: center; width: 100%">G / H</h4>
 
                     <div class="ui-flex-grid-row ui-flex-grid-item" style="--justify: space-evenly">
                         <div
@@ -136,9 +135,7 @@
 
                     <!-- NOTE: I / J - Slot 5 -->
 
-                    <div class="ui-flex-grid-item">
-                        <h4>I / J</h4>
-                    </div>
+                    <h4 class="ui-flex-grid-item" style="text-align: center; width: 100%">I / J</h4>
 
                     <div class="ui-flex-grid-row ui-flex-grid-item" style="--justify: space-evenly">
                         <div

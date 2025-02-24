@@ -18,7 +18,6 @@ export interface Results {
     slots: Consumption[];
 }
 
-// TODO: Write the test for this
 export function consumption(data: Data): Results {
     const main: Consumption = {
         kg: data.flow * (data.runtime * 60),

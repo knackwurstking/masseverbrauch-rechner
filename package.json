@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite --host",
-        "build": "tsc && vite build --minify -c vite.config.js --emptyOutDir",
+        "build": "tsc && npm run test && vite build --minify -c vite.config.js --emptyOutDir",
         "preview": "vite preview --host",
         "test": "jest",
         "generate-assets": "npx pwa-assets-generator"

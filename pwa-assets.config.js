@@ -6,5 +6,5 @@ preset.maskable.padding = 0;
 
 export default defineConfig({
     preset,
-    images: ["public/icons/icon.png"],
+    images: ["public/assets/icons/icon.png"],
 });

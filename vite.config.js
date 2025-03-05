@@ -31,7 +31,7 @@ const screenshots = [];
 const manifestForPlugIn = {
     strategies: "generateSW",
     registerType: "prompt",
-    includeAssets: ["/assets/fonts/bootstrap-icons.woff", "/assets/fonts/bootstrap-icons.woff2"],
+    includeAssets: ["assets/fonts/bootstrap-icons.woff", "assets/fonts/bootstrap-icons.woff2"],
     manifest: {
         name: "Masseverbrauch Rechner",
         short_name: "masseverbrauch-rechner",
